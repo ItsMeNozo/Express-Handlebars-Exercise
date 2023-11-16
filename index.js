@@ -2,9 +2,11 @@ const express = require("express");
 const app = express();
 const port = 4000 || process.env.PORT;
 const expressHbs = require("express-handlebars");
+const path = require("path");
 
 app.use(express.static(__dirname + "/html")); // set source path to /html
 
+app.set("views", path.join(__dirname, "/views"));
 // Cau hinh su dung View Template
 app.engine(
   "hbs",
